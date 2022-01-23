@@ -1,0 +1,286 @@
+Delete/Close Channel                   DELETE       /channels/{channel.id}
+Delete Message                         DELETE       /channels/{channel.id}/messages/{message.id}
+Delete All Reactions                   DELETE       /channels/{channel.id}/messages/{message.id}/reactions
+Delete Own Reaction                    DELETE       /channels/{channel.id}/messages/{message.id}/reactions/{emoji}/@me
+Delete User Reaction                   DELETE       /channels/{channel.id}/messages/{message.id}/reactions/{emoji}/{user.id}
+Delete Channel Permission              DELETE       /channels/{channel.id}/permissions/{overwrite.id}
+Delete Pinned Channel Message          DELETE       /channels/{channel.id}/pins/{message.id}
+Group DM Remove Recipient              DELETE       /channels/{channel.id}/recipients/{user.id}
+Delete Guild                           DELETE       /guilds/{guild.id}
+Remove Guild Ban                       DELETE       /guilds/{guild.id}/bans/{user.id}
+Delete Guild Integration               DELETE       /guilds/{guild.id}/integrations/{integration.id}
+Remove Guild Member                    DELETE       /guilds/{guild.id}/members/{user.id}
+Remove Guild Member Role               DELETE       /guilds/{guild.id}/members/{user.id}/roles/{role.id}
+Delete Guild Role                      DELETE       /guilds/{guild.id}/roles/{role.id}
+Delete Invite                          DELETE       /invites/{invite.code}
+Leave Guild                            DELETE       /users/@me/guilds/{guild.id}
+Delete Webhook                         DELETE       /webhooks/{webhook.id}
+Delete Webhook with Token              DELETE       /webhooks/{webhook.id}/{webhook.token}
+Get Channel                            GET          /channels/{channel.id}
+Get Channel Invites                    GET          /channels/{channel.id}/invites
+Get Channel Messages                   GET          /channels/{channel.id}/messages
+Get Channel Message                    GET          /channels/{channel.id}/messages/{message.id}
+Get Reactions                          GET          /channels/{channel.id}/messages/{message.id}/reactions/{emoji}
+Get Pinned Messages                    GET          /channels/{channel.id}/pins
+Get Channel Webhooks                   GET          /channels/{channel.id}/webhooks
+Get Gateway                            GET          /gateway
+Get Gateway Bot                        GET          /gateway/bot
+Get Guild                              GET          /guilds/{guild.id}
+Get Guild Bans                         GET          /guilds/{guild.id}/bans
+Get Guild Channels                     GET          /guilds/{guild.id}/channels
+Get Guild Embed                        GET          /guilds/{guild.id}/embed
+Get Guild Integrations                 GET          /guilds/{guild.id}/integrations
+Get Guild Invites                      GET          /guilds/{guild.id}/invites
+List Guild Members                     GET          /guilds/{guild.id}/members
+Get Guild Member                       GET          /guilds/{guild.id}/members/{user.id}
+Get Guild Prune Count                  GET          /guilds/{guild.id}/prune
+Get Guild Voice Regions                GET          /guilds/{guild.id}/regions
+Get Guild Roles                        GET          /guilds/{guild.id}/roles
+Get Guild Webhooks                     GET          /guilds/{guild.id}/webhooks
+Get Invite                             GET          /invites/{invite.code}
+Get Current Application Information    GET          /oauth2/applications/@me
+Get Current User                       GET          /users/@me
+Get User DMs                           GET          /users/@me/channels
+Get Users Connections                  GET          /users/@me/connections
+Get Current User Guilds                GET          /users/@me/guilds
+Get User                               GET          /users/{user.id}
+List Voice Regions                     GET          /voice/regions
+Get Webhook                            GET          /webhooks/{webhook.id}
+Get Webhook with Token                 GET          /webhooks/{webhook.id}/{webhook.token}
+Edit Message                           PATCH        /channels/{channel.id}/messages/{message.id}
+Modify Guild                           PATCH        /guilds/{guild.id}
+Modify Guild Channel Positions         PATCH        /guilds/{guild.id}/channels
+Modify Guild Embed                     PATCH        /guilds/{guild.id}/embed
+Modify Guild Integration               PATCH        /guilds/{guild.id}/integrations/{integration.id}
+Modify Current User's Nick             PATCH        /guilds/{guild.id}/members/@me/nick
+Modify Guild Member                    PATCH        /guilds/{guild.id}/members/{user.id}
+Modify Guild Role Positions            PATCH        /guilds/{guild.id}/roles
+Modify Guild Role                      PATCH        /guilds/{guild.id}/roles/{role.id}
+Modify Current User                    PATCH        /users/@me
+Modify Webhook                         PATCH        /webhooks/{webhook.id}
+Modify Webhook with Token              PATCH        /webhooks/{webhook.id}/{webhook.token}
+Create Channel Invite                  POST         /channels/{channel.id}/invites
+Create Message                         POST         /channels/{channel.id}/messages
+Bulk Delete Messages                   POST         /channels/{channel.id}/messages/bulk-delete
+Bulk Delete Messages (deprecated)      POST         /channels/{channel.id}/messages/bulk_delete
+Trigger Typing Indicator               POST         /channels/{channel.id}/typing
+Create Webhook                         POST         /channels/{channel.id}/webhooks
+Create Guild                           POST         /guilds
+Create Guild Channel                   POST         /guilds/{guild.id}/channels
+Create Guild Integration               POST         /guilds/{guild.id}/integrations
+Sync Guild Integration                 POST         /guilds/{guild.id}/integrations/{integration.id}/sync
+Begin Guild Prune                      POST         /guilds/{guild.id}/prune
+Create Guild Role                      POST         /guilds/{guild.id}/roles
+Accept Invite                          POST         /invites/{invite.code}
+Create DM                              POST         /users/@me/channels
+Create Group DM                        POST         /users/@me/channels
+Execute Webhook                        POST         /webhooks/{webhook.id}/{webhook.token}
+Execute GitHub-Compatible Webhook      POST         /webhooks/{webhook.id}/{webhook.token}/github
+Execute Slack-Compatible Webhook       POST         /webhooks/{webhook.id}/{webhook.token}/slack
+Get Fingerprint                        POST         /auth/fingerprint
+Create Reaction                        PUT          /channels/{channel.id}/messages/{message.id}/reactions/{emoji}/@me
+Edit Channel Permissions               PUT          /channels/{channel.id}/permissions/{overwrite.id}
+Add Pinned Channel Message             PUT          /channels/{channel.id}/pins/{message.id}
+Group DM Add Recipient                 PUT          /channels/{channel.id}/recipients/{user.id}
+Create Guild Ban                       PUT          /guilds/{guild.id}/bans/{user.id}
+Add Guild Member                       PUT          /guilds/{guild.id}/members/{user.id}
+Add Guild Member Role                  PUT          /guilds/{guild.id}/members/{user.id}/roles/{role.id}
+Modify Channel                         PATCH        /channels/{channel.id}
+
+
+GET
+
+/applications
+/applications/:application-id
+/applications/:application-id/branches
+/applications/:application-id/branches/:branch-id/builds
+/applications/:application-id/branches/:branch-id/builds/:build-id
+/applications/:application-id/branches/:branch-id/builds/live?locale=:locale&platform=:platform
+/applications/:application-id/commands
+/applications/:application-id/commands/:command-id
+/applications/:application-id/guilds/:guild-id/commands
+/applications/:application-id/guilds/:guild-id/commands/:command-id
+/applications/:application-id/guilds/:guild-id/commands/:command-id/permissions
+/applications/:application-id/guilds/:guild-id/commands/permissions
+/applications/:application-id/skus
+/applications/:application-id/public
+/applications/detectable
+
+ 
+/application-news
+/application-news/:application-news-id
+
+ 
+/activities
+/activities/statistics/applications/:application-id
+
+ 
+/auth/location-metadata
+/auth/login
+/auth/register
+
+/channels/:channel-id
+/channels/:channel-id/call
+/channels/:channel-id/follower-stats
+/channels/:channel-id/follower-message-stats
+/channels/:channel-id/invites
+/channels/:channel-id/messages
+/channels/:channel-id/messages/search
+/channels/:channel-id/messages/:message-id
+/channels/:channel-id/messages/:message-id/reactions/:emoji
+/channels/:channel-id/pins
+/channels/:channel-id/store-listing
+/channels/:channel-id/store-listing/:sku-id
+/channels/:channel-id/webhooks
+/channels/:channel-id/messages/:message-id/threads
+/channels/:channel-id/threads
+/channels/:channel-id/thread-members/@me
+/channels/:channel-id/thread-members/:user-id
+/channels/:channel-id/thread-members
+/channels/:channel-id/threads/active
+/channels/:channel-id/threads/archived/public
+/channels/:channel-id/threads/archived/private
+/channels/:channel-id/users/@me/threads/archived/private
+
+/connections/:provider-id/authorize
+
+/discoverable-guilds
+
+/discovery/categories
+
+/entitlements/gift-codes/:gift-code
+
+/experiments
+/experiments?with_guild_experiments=true
+
+/friend-suggestions
+
+/gateway
+/gateway/bot
+
+/gifs/suggest?q=:query
+/gifs/trending
+
+/guilds/:guild-id
+/guilds/:guild-id/analytics/overview
+/guilds/:guild-id/analytics/engagement/overview
+/guilds/:guild-id/analytics/growth-activation/overview
+/guilds/:guild-id/analytics/growth-activation/retention
+/guilds/:guild-id/applications
+/guilds/:guild-id/audit-logs
+/guilds/:guild-id/bans
+/guilds/:guild-id/bans/:user-id
+/guilds/:guild-id/channels
+/guilds/:guild-id/discovery-metadata
+/guilds/:guild-id/discovery-requirements
+/guilds/:guild-id/embed
+/guilds/:guild-id/emojis
+/guilds/:guild-id/emojis/:emoji-id
+/guilds/:guild-id/integrations
+/guilds/:guild-id/invites
+/guilds/:guild-id/members
+/guilds/:guild-id/members/:user-id
+/guilds/:guild-id/member-verification
+/guilds/:guild-id/messages/search
+/guilds/:guild-id/premium/subscriptions
+/guilds/:guild-id/preview
+/guilds/:guild-id/prune
+/guilds/:guild-id/regions
+/guilds/:guild-id/roles
+/guilds/:guild-id/templates
+/guilds/:guild-id/vanity-url
+/guilds/:guild-id/webhooks
+/guilds/:guild-id/welcome-screen
+/guilds/:guild-id/widget
+/guilds/:guild-id/widget.json
+/guilds/:guild-id/widget.png
+/guilds/templates/:template-code
+
+ 
+/invites/:invite-code
+/invite/:invite-code
+
+/oauth2/@me
+/oauth2/applications
+/oauth2/applications/:application-id
+/oauth2/applications/:application-id/rpc
+/oauth2/applications/:application-id/assets
+/oauth2/authorize?client_id=:client-id
+/oauth2/authorize/webhook-channels?guild_id=:guild-id
+/oauth2/tokens
+/oauth2/tokens/:token
+
+/partners/:guild-id/requirements
+/partners/connections/
+
+ 
+/store/published-listings/applications/:application-id
+/store/published-listings/skus/:application-id
+/store/skus/:application-id
+/store/skus/:application-id/listings
+ 
+/streams/:stream-key/preview
+
+/teams
+
+/users/:user-id
+/users/:user-id/channels
+/users/:user-id/profile
+/users/:user-id/relationships
+/users/:user-id/sessions/:session-id/activities/:application-id/metadata
+/users/@me
+/users/@me?with_analytics_token=true
+/users/@me/activities/statistics/applications
+/users/@me/affinities/guilds
+/users/@me/affinities/users
+/users/@me/applications/:application-id/achievements
+/users/@me/applications/:application-id/entitlements
+/users/@me/billing/payments
+/users/@me/billing/payment-sources
+/users/@me/billing/payment-sources/:payment-source
+/users/@me/billing/stripe/payment-intents/payments/:payment
+/users/@me/billing/subscriptions
+/users/@me/billing/subscriptions/:subscription-id
+/users/@me/billing/trials/:trial-id/eligibility
+/users/@me/channels
+/users/@me/connections
+/users/@me/consent
+/users/@me/entitlements/gifts
+/users/@me/feed/settings
+/users/@me/feed/unsubscribed_users
+/users/@me/guilds
+/users/@me/guilds/premium/subscriptions
+/users/@me/guilds/premium/subscription-slots
+/users/@me/guilds/premium/subscriptions/cooldown
+/users/@me/harvest
+/users/@me/library
+/users/@me/mentions
+/users/@me/notes
+/users/@me/notes/:note-user-id
+/users/@me/relationships
+/users/@me/settings
+/users/@me/phone
+/phone-verifications/verify
+
+ 
+/voice/regions
+/voice/ice
+
+POST (Not finished)
+
+ 
+/channels/:channel-id/messages
+/channels/:channel-id/messages/bulk-delete
+/channels/:channel-id/invites
+/channels/:channel-id/typing
+
+ 
+/guilds/:guild-id/emojis
+/guilds/:guild-id/channels
+/guilds/:guild-id/roles
+/guilds/:guild-id/prune
+/guilds/:guild-id/integrations
+/guilds/:guild-id/integrations/:integration-id/sync
+/webhooks/:application-id/:interaction-token/messages/@original
+/webhooks/:webhook-id
+/webhooks/:webhook-id/:webhook-token
